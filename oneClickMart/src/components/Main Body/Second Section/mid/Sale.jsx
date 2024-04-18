@@ -107,6 +107,8 @@ const Sale = () => {
               image={item.link}
               price={item.price}
               blur={index === data.length - 1}
+              id={item.id}
+              desc={item.desc}
             />
           </li>
         ))}

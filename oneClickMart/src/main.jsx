@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
-import App from "./App.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
 import MainHeroSection from "./components/Main Body/MainHeroSection.jsx";
-import Sale from "./components/Main Body/Second Section/mid/Sale.jsx";
+import { Provider } from "react-redux";
+import Footer from "./components/Footer/Footer.jsx";
+
+import { store } from "./store/store.js";
 
 import "./styles/header/allpages.scss";
 import "./styles/mediaQueries.scss";
@@ -27,16 +29,40 @@ import "./styles/third/individualcategory.scss";
 import "./styles/third/third.scss";
 import "./styles/third/categories.scss";
 import "./styles/forth/forth.scss";
+import "./styles/forth/individualcategory.scss";
+import "./styles/forth/forthproducts.scss";
+import "./styles/fifth/fifthimage.scss";
+import "./styles/sixth/individualsixth.scss";
+import "./styles/sixth/sixth.scss";
+import "./styles/footer/footer.scss";
+import "./styles/signup/signup.scss";
+import "./styles/story/story.scss";
+import "./styles/about/about.scss";
+import "./styles/universal/universal.scss";
+import "./styles/myaccount/myaccount.scss";
+import Signup from "./components/SignUp/Signup.jsx";
+import Login from "./components/Login/Login.jsx";
+import Story from "./components/story/Story.jsx";
+import About from "./components/contact/Contact.jsx";
+import Universal from "./components/universal/Universal.jsx";
+import MyAccount from "./components/myaccount/MyAccount.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <ChakraProvider>
-      <Routes>
-        <Route path="/" element={<Header />}>
-          <Route index element={<MainHeroSection />} />
-        </Route>
-        <Route path="/second" element={<Sale />} />
-      </Routes>
-    </ChakraProvider>
+    <Provider store={store}>
+      <ChakraProvider>
+        <Routes>
+          <Route path="/" element={<Header />}>
+            <Route index element={<MainHeroSection />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="login" element={<Login />} />
+            <Route path="story" element={<Story />} />
+            <Route path="contact" element={<About />} />
+            <Route path="myaccount" element={<MyAccount />} />
+            <Route path="*" element={<Universal />} />
+          </Route>
+        </Routes>
+      </ChakraProvider>
+    </Provider>
   </BrowserRouter>
 );

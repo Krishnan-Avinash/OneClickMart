@@ -1,7 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-const Card = ({ image, link, name, price, blur }) => {
+import { useToast } from "@chakra-ui/react";
+
+import { addToCart } from "../../../../CartSice/cartSlice";
+
+const Card = ({ image, link, name, price, blur, desc, id }) => {
+  const toast = useToast();
+  const dispatch = useDispatch();
+  const addCart = () => {
+    dispatch(addToCart({ name, id, price, desc, totalPrice: price }));
+    console.log("totalQuantity");
+    toast({
+      title: "ITEM ADDED TO CART.",
+      description: `${name} has been added to the cart`,
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+  };
+
   return (
     <Link
       to=""
@@ -11,7 +30,7 @@ const Card = ({ image, link, name, price, blur }) => {
       <img src={image} alt="" />
       <h1>{name}</h1>
       <h3>$ {price}</h3>
-      <button>Add to Cart</button>
+      {!blur && <button onClick={addCart}>Add to Cart</button>}
     </Link>
   );
 };
