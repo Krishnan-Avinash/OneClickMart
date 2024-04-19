@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 import {
   Button,
@@ -11,6 +11,7 @@ import {
   DrawerHeader,
   DrawerBody,
   VStack,
+  textDecoration,
 } from "@chakra-ui/react";
 import IndividualName from "./IndividualName";
 
@@ -28,9 +29,16 @@ const AllPages = () => {
       <ul>
         {elements.map((item) => (
           <li key={item.id}>
-            <Link to={item.link}>
+            <NavLink
+              to={item.link}
+              style={({ isActive }) =>
+                isActive
+                  ? { textDecoration: "underline" }
+                  : { textDecoration: "none" }
+              }
+            >
               <IndividualName name={item.name} />
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
