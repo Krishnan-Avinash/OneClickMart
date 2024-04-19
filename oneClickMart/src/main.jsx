@@ -42,6 +42,7 @@ import "./styles/universal/universal.scss";
 import "./styles/myaccount/myaccount.scss";
 import "./styles/checkout/checkout.scss";
 import "./styles/maincart/maincart.scss";
+import "./styles/individualproductdetails/individualproductdetails.scss";
 import Signup from "./components/SignUp/Signup.jsx";
 import Login from "./components/Login/Login.jsx";
 import Story from "./components/story/Story.jsx";
@@ -50,6 +51,7 @@ import Universal from "./components/universal/Universal.jsx";
 import MyAccount from "./components/myaccount/MyAccount.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
 import MainCart from "./components/maincart/MainCart.jsx";
+import IndividualProductDetails from "./components/individualProduct/IndividualProductDetails.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -64,6 +66,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="contact" element={<About />} />
             <Route path="myaccount" element={<MyAccount />} />
             <Route path="cart" element={<MainCart />} />
+            <Route
+              path="individualelement"
+              element={<IndividualProductDetails />}
+            />
             <Route path="checkout" element={<Checkout />} />
             <Route path="*" element={<Universal />} />
           </Route>
