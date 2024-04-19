@@ -18,7 +18,7 @@ const AllPages = () => {
   const elements = [
     { name: "Home", link: "/", id: 1 },
     { name: "Contact", link: "/contact", id: 2 },
-    { name: "About", link: "/about", id: 3 },
+    { name: "About", link: "/story", id: 3 },
     { name: "Sign Up", link: "/signup", id: 4 },
   ];
   const { isOpen, onOpen, onClose } = useDisclosure();

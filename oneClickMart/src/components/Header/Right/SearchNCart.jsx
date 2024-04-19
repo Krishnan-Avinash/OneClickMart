@@ -19,19 +19,6 @@ const SearchNCart = () => {
     <div className="header-right">
       <input type="text" placeholder="What are you looking for?" />
       <Cart />
-      {/* <Link>
-        <img
-          src={img1}
-          alt="Err"
-          style={{
-            height: "2rem",
-            border: "1px solid black",
-            borderRadius: "50%",
-            padding: "0.15rem",
-            cursor: "pointer",
-          }}
-        />
-      </Link> */}
       <Menu>
         <MenuButton
           as={Button}
@@ -53,7 +40,9 @@ const SearchNCart = () => {
           />
         </MenuButton>
         <MenuList style={{ backgroundColor: "#5858ff61" }}>
-          <MenuItem>My Account</MenuItem>
+          <Link to="/myaccount">
+            <MenuItem>My Account</MenuItem>
+          </Link>
           <MenuItem>My Orders</MenuItem>
           <MenuItem>My Cancellations</MenuItem>
           <MenuItem>My Reviews</MenuItem>

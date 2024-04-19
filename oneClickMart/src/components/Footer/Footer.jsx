@@ -35,10 +35,16 @@ const Footer = () => {
       <div className="footer-fifth">
         <h2>Social Media</h2>
         <div className="footer-links">
-          <Link>
+          <Link
+            to="https://www.instagram.com/_avinashkrishnan?utm_source=qr&igsh=MTFxZHltNW5maWRjZw=="
+            target="_blank"
+          >
             <img src={insta} alt="Err" />
           </Link>
-          <Link>
+          <Link
+            to="https://www.linkedin.com/in/avinashkrishnan1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+          >
             <img src={li} alt="Err" />
           </Link>
         </div>

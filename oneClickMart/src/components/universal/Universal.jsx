@@ -5,6 +5,7 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
 const Universal = () => {
@@ -24,7 +25,9 @@ const Universal = () => {
           <h5>
             Your requested page was not found. Kindly go back to Home page
           </h5>
-          <button>Back To Home Page</button>
+          <Link to="/">
+            <button>Back To Home Page</button>
+          </Link>
         </div>
       </div>
       <Footer />
