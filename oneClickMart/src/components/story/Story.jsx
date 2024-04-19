@@ -25,15 +25,13 @@ const Story = () => {
           <div className="story-left">
             <h1>Our Story</h1>
             <p>
-              Launced in 2015, Exclusive is South Asia’s premier online shopping
-              makterplace with an active presense in Bangladesh. Supported by
-              wide range of tailored marketing, data and service solutions,
-              Exclusive has 10,500 sallers and 300 brands and serves 3 millioons
-              customers across the region.
+              Hi, I'm Palaghat Murali Krishnan Avinash. A passionate Front-end
+              React Developer. I have built this platform and put much efforts.
+              Hope you guys like it.
             </p>
             <p>
-              Exclusive has more than 1 Million products to offer, growing at a
-              very fast. Exclusive offers a diverse assotment in categories
+              OneClickMart has more than 1 Million products to offer, growing at
+              a very fast. OneClickMart offers a diverse assotment in categories
               ranging from consumer.
             </p>
           </div>

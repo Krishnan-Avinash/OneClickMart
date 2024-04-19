@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="footer-first">
-        <h1>Exclusive</h1>
+        <h1>OneClickMart</h1>
         <h3>Subscribe</h3>
         <p>Get 10% off on your first order</p>
         <section>

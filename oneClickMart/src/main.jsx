@@ -40,12 +40,16 @@ import "./styles/story/story.scss";
 import "./styles/about/about.scss";
 import "./styles/universal/universal.scss";
 import "./styles/myaccount/myaccount.scss";
+import "./styles/checkout/checkout.scss";
+import "./styles/maincart/maincart.scss";
 import Signup from "./components/SignUp/Signup.jsx";
 import Login from "./components/Login/Login.jsx";
 import Story from "./components/story/Story.jsx";
 import About from "./components/contact/Contact.jsx";
 import Universal from "./components/universal/Universal.jsx";
 import MyAccount from "./components/myaccount/MyAccount.jsx";
+import Checkout from "./components/checkout/Checkout.jsx";
+import MainCart from "./components/maincart/MainCart.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -59,6 +63,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="story" element={<Story />} />
             <Route path="contact" element={<About />} />
             <Route path="myaccount" element={<MyAccount />} />
+            <Route path="cart" element={<MainCart />} />
+            <Route path="checkout" element={<Checkout />} />
             <Route path="*" element={<Universal />} />
           </Route>
         </Routes>
