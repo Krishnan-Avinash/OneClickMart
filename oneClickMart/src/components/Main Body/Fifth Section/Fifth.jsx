@@ -4,7 +4,7 @@ import FifthImage from "./bottom/FifthImage";
 
 const Fifth = () => {
   return (
-    <div className="forth-main">
+    <div className="fifth-main">
       <FifthTop />
       <FifthImage />
     </div>

@@ -11,12 +11,14 @@ const Checkout = () => {
   return (
     <>
       <div className="checkout-container">
-        <Breadcrumb>
+        <Breadcrumb className="breadcrumb">
           <BreadcrumbItem>
             <BreadcrumbLink href="#">Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">My Account</BreadcrumbLink>
+            <BreadcrumbLink href="#" className="breadcrumb-acc">
+              My Account
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
             <BreadcrumbLink href="#">Cart</BreadcrumbLink>

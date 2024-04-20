@@ -23,24 +23,28 @@ const Story = () => {
         </Breadcrumb>
         <div className="story-main">
           <div className="story-left">
-            <h1>Our Story</h1>
+            <h1>My Story</h1>
             <p>
               Hi, I'm Palaghat Murali Krishnan Avinash. A passionate Front-end
               React Developer. I have built this platform and put much efforts.
               Hope you guys like it.
             </p>
-            <p>
-              OneClickMart has more than 1 Million products to offer, growing at
-              a very fast. OneClickMart offers a diverse assotment in categories
-              ranging from consumer.
-            </p>
+            <div className="secondP">
+              <h6>The Tech Stack used is</h6>
+              <div>
+                <p>ReactJS</p>
+                <p>Chakra UI</p>
+                <p>NodeJS + ExpressJS</p>
+                <p>MongoDB</p>
+              </div>
+            </div>
           </div>
           <div className="story-right">
             <img src={img1} alt="Error" />
           </div>
         </div>
-        <Sixth />
       </div>
+      <Sixth />
       <Footer />
     </>
   );

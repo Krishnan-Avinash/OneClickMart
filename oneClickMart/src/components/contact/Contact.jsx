@@ -28,7 +28,7 @@ const Contact = () => {
                 <img src={call} alt="Err" />
                 <h2>Call Us</h2>
               </section>
-              <p>We are available 24/7</p>
+              <p className="removeCall">We are available 24/7</p>
               <p>Phone: +919191919191</p>
             </section>
             <section className="about-left-bottom">
@@ -36,7 +36,9 @@ const Contact = () => {
                 <img src={mail} alt="Err" />
                 <h2>Write To US</h2>
               </div>
-              <p>Fill out the form and we will contact you within 24 hours</p>
+              <p className="removeMail">
+                Fill out the form and we will contact you within 24 hours
+              </p>
               <p>Email: avinash.krishnan1605@gmail.com</p>
             </section>
           </div>
@@ -47,7 +49,12 @@ const Contact = () => {
               <input type="number" placeholder="Your Phone" required />
             </div>
             <div className="about-right-mid">
-              <input type="text" placeholder="Your Message" required />
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Your message"
+              ></textarea>
+              {/* <input type="text" placeholder="Your Message" required /> */}
             </div>
             <div className="about-right-bottom">
               <button>Send Message</button>

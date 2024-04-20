@@ -73,7 +73,7 @@ const AllPages = () => {
                 </Link>
               </Button>
               <Button variant={"ghost"} colorScheme="blue">
-                <Link to={"/about"} onClick={onClose}>
+                <Link to={"/story"} onClick={onClose}>
                   About
                 </Link>
               </Button>

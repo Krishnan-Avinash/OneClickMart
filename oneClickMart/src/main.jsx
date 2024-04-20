@@ -72,6 +72,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             />
             <Route path="checkout" element={<Checkout />} />
             <Route path="*" element={<Universal />} />
+            {/* <Route path="/footer" element={<Footer />} /> */}
           </Route>
         </Routes>
       </ChakraProvider>

@@ -30,6 +30,7 @@ const SearchNCart = () => {
             borderRadius: "50%",
             border: "2px solid black",
           }}
+          className="accaccacc"
         >
           <img
             src={img1}

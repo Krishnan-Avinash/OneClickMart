@@ -7,7 +7,7 @@ import imgRBR from "../../../../assets/perfume2.png";
 
 const FifthImage = () => {
   return (
-    <div className="fifth-image">
+    <main className="fifth-image">
       <div className="fifth-left">
         <Link>
           <img src={imgL} alt="Error" />
@@ -32,7 +32,7 @@ const FifthImage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

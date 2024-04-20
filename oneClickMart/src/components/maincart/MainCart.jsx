@@ -14,6 +14,7 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
 const MainCart = () => {
@@ -94,7 +95,9 @@ const MainCart = () => {
                 <p>$ temp</p>
                 {/* <p>PRICE FROM STORE</p> */}
               </div>
-              <button className="checkout">Proceed to Checkout</button>
+              <Link to="/checkout">
+                <button className="checkout">Proceed to Checkout</button>
+              </Link>
             </div>
           </div>
         </div>
