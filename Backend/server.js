@@ -1,25 +1,16 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+import express from "express";
+import "dotenv/config";
+import { connectDb } from "./config/db.js";
+import cors from "cors";
+import userRouter from "./routes/user.route.js";
 
 const app = express();
-dotenv.config();
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
 
-const productRoutes = require("./routes/products");
+connectDb();
+app.use("/api/oneClickMart", userRouter);
 
-app.use("/product", productRoutes);
-
-mongoose
-  .connect("mongodb://127.0.0.1:27017/OneClickMart")
-  .then(() => {
-    console.log("DB Connected!");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-app.listen(process.env.PORT, () => {
-  console.log(`App is listening at Port: ${process.env.PORT}`);
-});
+app.listen(process.env.PORT, () =>
+  console.log("Listening on port: ", process.env.PORT)
+);
