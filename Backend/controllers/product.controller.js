@@ -2,10 +2,10 @@ import { Product } from "../models/product.model.js";
 import mongoose from "mongoose";
 
 const addProduct = async (req, res) => {
-  console.log("REQ.body: ", req.body);
-  console.log("req.file: ", req.file);
+  // console.log("REQ.body: ", req.body);
+  // console.log("req.file: ", req.file);
   let image_filename = req.file.filename;
-  console.log("file name: ", image_filename);
+  // console.log("file name: ", image_filename);
   const {
     name,
     price,
@@ -37,8 +37,8 @@ const addProduct = async (req, res) => {
       available,
       // images,
     });
-    console.log("REQ: ", req);
-    console.log("REQ.file: ", req.file);
+    // console.log("REQ: ", req);
+    // console.log("REQ.file: ", req.file);
     newProduct.save();
     res.status(200).json({ success: true, message: "New Product added" });
   } catch (error) {

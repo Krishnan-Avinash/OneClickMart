@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 
 const registerUser = async (req, res) => {
   const { email } = req.body;
-  console.log("Incoming email: ", email);
+  // console.log("Incoming email: ", email);
   try {
     if (!email) {
       return res
@@ -12,9 +12,9 @@ const registerUser = async (req, res) => {
     }
     let findUser = false;
     findUser = await User.findOne({ email });
-    console.log("find User: ", findUser);
+    // console.log("find User: ", findUser);
     if (findUser) {
-      console.log("User exists");
+      // console.log("User exists");
       return res
         .status(300)
         .json({ success: false, message: "Account Exists" });
@@ -58,7 +58,7 @@ const updateUserData = async (req, res) => {
 
 const updatePassword = async (req, res) => {
   const salt = await bcrypt.genSalt(10);
-  console.log("Entered");
+  // console.log("Entered");
   const { email, newPassword, confirmPassword } = req.body;
   const findUser = await User.findOne({ email });
   try {
@@ -68,16 +68,16 @@ const updatePassword = async (req, res) => {
         .json({ success: false, message: "User does not exist" });
     }
     if (await bcrypt.compare(findUser.password, newPassword)) {
-      console.log("Passwords same");
+      // console.log("Passwords same");
       return res
         .status(400)
         .json({ success: false, message: "Enter a different Password" });
     } else {
       if (newPassword == confirmPassword) {
-        console.log("Second last step");
+        // console.log("Second last step");
         findUser.password = await bcrypt.hash(newPassword, salt);
         findUser.save();
-        console.log("Final step");
+        // console.log("Final step");
         res
           .status(204)
           .json({ status: true, message: "Password Updated Successfully" });
@@ -93,7 +93,7 @@ const updatePassword = async (req, res) => {
 };
 
 const getUser = async (req, res) => {
-  console.log("REQ.PARAMS: ", req.params);
+  // console.log("REQ.PARAMS: ", req.params);
   const { email } = await req.params;
   if (!email) {
     return res
@@ -130,7 +130,7 @@ const sendMessage = async (req, res) => {
   }
   try {
     const findUser = await User.findOne({ email });
-    console.log("User: ", findUser.messages);
+    // console.log("User: ", findUser.messages);
     findUser.messages.push(message);
     await findUser.save();
     return res
