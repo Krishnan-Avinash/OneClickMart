@@ -5,6 +5,7 @@ import cors from "cors";
 import userRouter from "./routes/user.route.js";
 import productRouter from "./routes/product.route.js";
 import cartRouter from "./routes/cart.route.js";
+import orderRouter from "./routes/order.route.js";
 
 const app = express();
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use("/api/oneClickMart", userRouter);
 app.use("/api/oneClickMart/admin", productRouter);
 app.use("/images", express.static("uploaded-files"));
 app.use("/api/oneClickMart/cart", cartRouter);
+app.use("/api/oneCickMart/order", orderRouter);
 
 app.listen(process.env.PORT, () =>
   console.log("Listening on port: ", process.env.PORT)

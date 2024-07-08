@@ -34,6 +34,10 @@ const userSchema = mongoose.Schema(
       type: [String],
       default: [],
     },
+    orders: {
+      type: [Object],
+      default: [],
+    },
   },
   { timestamps: true, minimize: false }
 );
