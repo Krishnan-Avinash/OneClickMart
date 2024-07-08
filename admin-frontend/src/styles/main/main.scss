@@ -1,0 +1,11 @@
+.main-body {
+  height: 100%;
+  width: 100%;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 90%;
+    object-fit: contain;
+  }
+}

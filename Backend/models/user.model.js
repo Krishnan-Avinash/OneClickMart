@@ -23,8 +23,8 @@ const userSchema = mongoose.Schema(
       default: false,
     },
     cart: {
-      type: Array,
-      default: [],
+      type: Object,
+      default: {},
     },
     address: {
       type: String,
@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema(
       default: [],
     },
   },
-  { timestamps: true }
+  { timestamps: true, minimize: false }
 );
 
 export const User = mongoose.model("User", userSchema);

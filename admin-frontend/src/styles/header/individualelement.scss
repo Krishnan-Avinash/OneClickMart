@@ -1,0 +1,40 @@
+.individualname {
+  p {
+    color: black;
+    font-size: 1.15rem;
+    font-weight: 400;
+    transition: all 0.1s linear;
+    &:hover {
+      transform: scale(1.1);
+      text-decoration: underline;
+    }
+  }
+  .login-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    background-color: #5858ff;
+    border: 1px solid #5858ff;
+    outline: none;
+    color: white;
+    border-radius: 0.5rem;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .login-btn-2 {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #5858ff;
+    border: 1px solid #5858ff;
+    outline: none;
+    color: white;
+    border-radius: 0.5rem;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
