@@ -1,5 +1,5 @@
 import { User } from "../models/user.model.js";
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 
 const registerUser = async (req, res) => {
   const { email } = req.body;
@@ -57,7 +57,7 @@ const updateUserData = async (req, res) => {
 };
 
 const updatePassword = async (req, res) => {
-  const salt = await bcrypt.genSalt(10);
+  // const salt = await bcrypt.genSalt(10);
   // console.log("Entered");
   const { email, newPassword, confirmPassword } = req.body;
   const findUser = await User.findOne({ email });
@@ -67,26 +67,26 @@ const updatePassword = async (req, res) => {
         .status(500)
         .json({ success: false, message: "User does not exist" });
     }
-    if (await bcrypt.compare(findUser.password, newPassword)) {
-      // console.log("Passwords same");
-      return res
-        .status(400)
-        .json({ success: false, message: "Enter a different Password" });
-    } else {
-      if (newPassword == confirmPassword) {
-        // console.log("Second last step");
-        findUser.password = await bcrypt.hash(newPassword, salt);
-        findUser.save();
-        // console.log("Final step");
-        res
-          .status(204)
-          .json({ status: true, message: "Password Updated Successfully" });
-      } else {
-        return res
-          .status(400)
-          .json({ success: false, message: "Passwords Not Same" });
-      }
-    }
+    // if (await bcrypt.compare(findUser.password, newPassword)) {
+    //   // console.log("Passwords same");
+    //   return res
+    //     .status(400)
+    //     .json({ success: false, message: "Enter a different Password" });
+    // } else {
+    //   if (newPassword == confirmPassword) {
+    //     // console.log("Second last step");
+    //     findUser.password = await bcrypt.hash(newPassword, salt);
+    //     findUser.save();
+    //     // console.log("Final step");
+    //     res
+    //       .status(204)
+    //       .json({ status: true, message: "Password Updated Successfully" });
+    //   } else {
+    //     return res
+    //       .status(400)
+    //       .json({ success: false, message: "Passwords Not Same" });
+    //   }
+    // }
   } catch (error) {
     res.status(500).json({ success: false, message: "Some error occured" });
   }
