@@ -7,9 +7,9 @@ import Header from "./components/Navbar/Header";
 import "./styles/common.scss";
 
 import { Auth0Provider } from "@auth0/auth0-react";
-import Main from "./components/Main";
 import Add from "./components/Add/Add";
 import List from "./components/list/List";
+import MainBody from "./components/MainBody";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Auth0Provider
@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header />}>
-          <Route index element={<Main />} />
+          <Route index element={<MainBody />} />
           <Route path="add" element={<Add />} />
           <Route path="list" element={<List />} />
         </Route>
