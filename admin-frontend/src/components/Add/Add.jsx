@@ -26,7 +26,7 @@ const Add = () => {
     formData.append("mainImg", image);
 
     const response = await axios.post(
-      "http://localhost:8080/api/oneClickMart/admin/addProduct",
+      "https://oneclickmart.onrender.com/api/oneClickMart/admin/addProduct",
       formData
     );
     if (response.data.success) {

@@ -13,7 +13,7 @@ const List = () => {
   const [data, setData] = useState([]);
   const getData = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/oneClickMart/admin/getProduct"
+      "https://oneclickmart.onrender.com/api/oneClickMart/admin/getProduct"
     );
     if (response.data.success) {
       setData(response.data.data);
@@ -31,7 +31,7 @@ const List = () => {
     console.log("Data: ", item);
     console.log("Value: ", newVal);
     const response = await axios.patch(
-      "http://localhost:8080/api/oneClickMart/admin/updateProduct",
+      "https://oneclickmart.onrender.com/api/oneClickMart/admin/updateProduct",
       {
         _id: item._id,
         newAvailable: Number(newVal),
@@ -51,7 +51,7 @@ const List = () => {
     console.log("id: ", id);
     e.preventDefault();
     const response = await axios.delete(
-      "http://localhost:8080/api/oneClickMart/admin/deleteProduct",
+      "https://oneclickmart.onrender.com/api/oneClickMart/admin/deleteProduct",
       {
         data: {
           _id: id,
@@ -99,7 +99,7 @@ const List = () => {
                   <div className="only-few-left">Only Few Left</div>
                 )} */}
                 <img
-                  src={`http://localhost:8080/images/${item.mainImg}`}
+                  src={`https://oneclickmart.onrender.com/images/${item.mainImg}`}
                   alt=""
                 />
               </div>
